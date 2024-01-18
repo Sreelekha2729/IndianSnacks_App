@@ -10,7 +10,7 @@ let {
   postData,
   deleteData,
   updateData,
-} = require("/Controller/dbController");
+} = require("../Controller/dbController");
 
 //middleware
 app.use(bodyParser.json());
