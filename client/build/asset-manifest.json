@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/IndianSnacksApp/static/css/main.acbfc845.css",
+    "main.js": "/IndianSnacksApp/static/js/main.a5b0c66f.js",
+    "index.html": "/IndianSnacksApp/index.html",
+    "main.acbfc845.css.map": "/IndianSnacksApp/static/css/main.acbfc845.css.map",
+    "main.a5b0c66f.js.map": "/IndianSnacksApp/static/js/main.a5b0c66f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acbfc845.css",
+    "static/js/main.a5b0c66f.js"
+  ]
+}
