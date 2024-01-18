@@ -1,6 +1,7 @@
 let mongo = require("mongodb");
 let { MongoClient } = require("mongodb");
-let mongoUrl = "mongodb://127.0.0.1:27017";
+let mongoUrl =
+  "mongodb+srv://sreelekha2729:qONTTzkK2h3QB0yJ@cluster0.zmfybwu.mongodb.net/?retryWrites=true&w=majority";
 let client = new MongoClient(mongoUrl);
 
 async function dbConnect() {
