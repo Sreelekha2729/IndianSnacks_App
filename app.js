@@ -10,7 +10,7 @@ let {
   postData,
   deleteData,
   updateData,
-} = require("../Controller/dbController");
+} = require("./Controller/dbController");
 
 //middleware
 app.use(bodyParser.json());
@@ -97,7 +97,7 @@ app.get("/savouries", async (req, res) => {
   console.log("Price", req.query.price);
   if (req.query.price) {
     query = { price: Number(req.query.price) };
-  }else if (lcost && hcost) {
+  } else if (lcost && hcost) {
     query = { price: { $gt: lcost, $lt: hcost } };
   } else if (req.query.rating) {
     query = { rating: Number(req.query.rating) };
@@ -117,7 +117,7 @@ app.get("/vadiyalu", async (req, res) => {
   console.log("Price", req.query.price);
   if (req.query.price) {
     query = { price: Number(req.query.price) };
-     } else if (lcost && hcost) {
+  } else if (lcost && hcost) {
     query = { price: { $gt: lcost, $lt: hcost } };
   } else if (req.query.rating) {
     query = { rating: Number(req.query.rating) };
@@ -137,7 +137,7 @@ app.get("/podulu", async (req, res) => {
   console.log("Price", req.query.price);
   if (req.query.price) {
     query = { price: Number(req.query.price) };
-     } else if (lcost && hcost) {
+  } else if (lcost && hcost) {
     query = { price: { $gt: lcost, $lt: hcost } };
   } else if (req.query.rating) {
     query = { rating: Number(req.query.rating) };
@@ -157,7 +157,7 @@ app.get("/veg-pickles", async (req, res) => {
   console.log("Price", req.query.price);
   if (req.query.price) {
     query = { price: Number(req.query.price) };
-     } else if (lcost && hcost) {
+  } else if (lcost && hcost) {
     query = { price: { $gt: lcost, $lt: hcost } };
   } else if (req.query.rating) {
     query = { rating: Number(req.query.rating) };
@@ -177,7 +177,7 @@ app.get("/non-vegpickles", async (req, res) => {
   console.log("Price", req.query.price);
   if (req.query.price) {
     query = { price: Number(req.query.price) };
-     } else if (lcost && hcost) {
+  } else if (lcost && hcost) {
     query = { price: { $gt: lcost, $lt: hcost } };
   } else if (req.query.rating) {
     query = { rating: Number(req.query.rating) };
