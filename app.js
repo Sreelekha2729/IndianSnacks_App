@@ -21,12 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-//static folders
-app.use(express.static(path.join(__dirname, "./client/build")));
-//static routes
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+
 
 
 app.get("/", (req, res) => {
@@ -260,6 +255,13 @@ app.delete("/deleteOrder", async (req, res) => {
   let condition = { _id: new ObjectId(req.body._id) };
   let output = await deleteData(collection, condition);
   res.send(output);
+});
+
+//static folders
+app.use(express.static(path.join(__dirname, "./client/build")));
+//static routes
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 app.listen(port, (err) => {
