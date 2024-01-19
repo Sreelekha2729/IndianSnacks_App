@@ -7,12 +7,6 @@ const path = require("path");
 const port = process.env.PORT || 8080;
 
 
-//static folders
-app.use(express.static(path.join(__dirname, "./client/build")));
-//static routes
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
 
 let {
   dbConnect,
@@ -26,6 +20,14 @@ let {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+//static folders
+app.use(express.static(path.join(__dirname, "./client/build")));
+//static routes
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 
 app.get("/", (req, res) => {
   res.send("Hiii From Express");
