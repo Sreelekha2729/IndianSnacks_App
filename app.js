@@ -1,9 +1,19 @@
 let express = require("express");
 let app = express();
-let port = 2729;
 let { ObjectId } = require("mongodb");
 let bodyParser = require("body-parser");
 let cors = require("cors");
+const path = require("path");
+const port = process.env.PORT || 8080;
+
+
+//static folders
+app.use(express.static(path.join(__dirname, "./client/build")));
+//static routes
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 let {
   dbConnect,
   getData,
